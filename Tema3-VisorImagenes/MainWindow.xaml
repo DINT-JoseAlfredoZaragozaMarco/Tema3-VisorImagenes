@@ -1,0 +1,43 @@
+﻿<Window x:Class="Tema3_VisorImagenes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3_VisorImagenes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="861" MinWidth="523">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="70" Background="LightBlue" Margin="10">
+            <TextBlock DockPanel.Dock="Left" FontSize="20" VerticalAlignment="Center" Margin="5"> Nº de imagenes: 10</TextBlock>
+            <TextBlock DockPanel.Dock="Right" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5">Diseñado por Jose Alfredo Zaragoza Marco</TextBlock>
+        </DockPanel>
+        <Border DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="5" CornerRadius="5" Width="120" Margin="10">
+            <DockPanel Background="LightGreen">
+                <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+                    <Button Width="100" Margin="5">Añadir Imagen</Button>
+                    <Button Width="100" Margin="5">Eliminar Imagen</Button>
+                    <Button Width="100" Margin="5">Eliminar Todas</Button>
+                </WrapPanel>
+                <WrapPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <Button Width="100" Margin="5">Rotar</Button>
+                    <Button Width="100" Margin="5">Recortar</Button>
+                </WrapPanel>
+            </DockPanel>
+        </Border>
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock HorizontalAlignment="Center" FontSize="40" FontFamily="Rubik">Visor de imágenes</TextBlock>
+            </StackPanel>
+            <WrapPanel DockPanel.Dock="Bottom">
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+            </WrapPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>
