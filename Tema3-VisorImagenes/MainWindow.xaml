@@ -5,30 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tema3_VisorImagenes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="861" MinWidth="523">
+        Icon="./assets/icon.png"
+        Title="Visor de imagen" Height="450" Width="861" MinWidth="523" MinHeight="450">
     <DockPanel>
-        <DockPanel DockPanel.Dock="Bottom" Height="70" Background="LightBlue" Margin="10">
-            <TextBlock DockPanel.Dock="Left" FontSize="20" VerticalAlignment="Center" Margin="5"> Nº de imagenes: 10</TextBlock>
-            <TextBlock DockPanel.Dock="Right" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5">Diseñado por Jose Alfredo Zaragoza Marco</TextBlock>
+        <DockPanel DockPanel.Dock="Bottom" Height="70" Background="LightBlue" Margin="10" LastChildFill="False">
+            <TextBlock x:Name="numeroImagenes_TextBlock" DockPanel.Dock="Left" FontSize="20" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock DockPanel.Dock="Right" FontSize="20" VerticalAlignment="Center" Margin="5">Diseñado por Jose Alfredo Zaragoza Marco</TextBlock>
         </DockPanel>
         <Border DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="5" CornerRadius="5" Width="120" Margin="10">
-            <DockPanel Background="LightGreen">
+            <DockPanel Background="LightGreen" LastChildFill="False">
                 <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
-                    <Button Width="100" Margin="5">Añadir Imagen</Button>
-                    <Button Width="100" Margin="5">Eliminar Imagen</Button>
-                    <Button Width="100" Margin="5">Eliminar Todas</Button>
+                    <Button x:Name="añadirImagenButton" Width="100" Margin="5" Click="añadirImagenButton_Click">Añadir Imagen</Button>
+                    <Button Width="100" Margin="5" Click="eliminarImagen_Button_Click">Eliminar Imagen</Button>
+                    <Button Width="100" Margin="5" Click="eliminarTodas_Button_Click">Eliminar Todas</Button>
                 </WrapPanel>
-                <WrapPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    <Button Width="100" Margin="5">Rotar</Button>
+                <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                    <Button Width="100" Margin="5" Click="rotar_Button_Click">Rotar</Button>
                     <Button Width="100" Margin="5">Recortar</Button>
                 </WrapPanel>
             </DockPanel>
         </Border>
-        <DockPanel DockPanel.Dock="Top">
-            <StackPanel DockPanel.Dock="Top">
-                <TextBlock HorizontalAlignment="Center" FontSize="40" FontFamily="Rubik">Visor de imágenes</TextBlock>
-            </StackPanel>
-            <WrapPanel DockPanel.Dock="Bottom">
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="40" FontFamily="Rubik">Visor de imágenes</TextBlock>
+            <WrapPanel x:Name="panelImagenesWrapPanel">
                 <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
                 <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
                 <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
