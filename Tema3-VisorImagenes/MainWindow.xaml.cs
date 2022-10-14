@@ -30,8 +30,6 @@ namespace Tema3_VisorImagenes
         private void añadirImagenButton_Click(object sender, RoutedEventArgs e)
         {
             Image imagen = new Image();
-            imagen.Height = 120;
-
             BitmapImage logo = new BitmapImage();
             logo.BeginInit();
             logo.UriSource = new Uri("./assets/episodioIV.jpg", UriKind.Relative);

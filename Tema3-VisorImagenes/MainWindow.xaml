@@ -7,35 +7,55 @@
         mc:Ignorable="d"
         Icon="./assets/icon.png"
         Title="Visor de imagen" Height="450" Width="861" MinWidth="523" MinHeight="450">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key="Borde">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="Footer">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
     <DockPanel>
         <DockPanel DockPanel.Dock="Bottom" Height="70" Background="LightBlue" Margin="10" LastChildFill="False">
-            <TextBlock x:Name="numeroImagenes_TextBlock" DockPanel.Dock="Left" FontSize="20" VerticalAlignment="Center" Margin="5"/>
-            <TextBlock DockPanel.Dock="Right" FontSize="20" VerticalAlignment="Center" Margin="5">Diseñado por Jose Alfredo Zaragoza Marco</TextBlock>
+            <TextBlock x:Name="numeroImagenes_TextBlock" DockPanel.Dock="Left" Style="{StaticResource Footer}"/>
+            <TextBlock DockPanel.Dock="Right" Style="{StaticResource Footer}">Diseñado por Jose Alfredo Zaragoza Marco</TextBlock>
         </DockPanel>
-        <Border DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="5" CornerRadius="5" Width="120" Margin="10">
+        <Border DockPanel.Dock="Right" Style="{StaticResource Borde}">
             <DockPanel Background="LightGreen" LastChildFill="False">
                 <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
-                    <Button x:Name="añadirImagenButton" Width="100" Margin="5" Click="añadirImagenButton_Click">Añadir Imagen</Button>
-                    <Button Width="100" Margin="5" Click="eliminarImagen_Button_Click">Eliminar Imagen</Button>
-                    <Button Width="100" Margin="5" Click="eliminarTodas_Button_Click">Eliminar Todas</Button>
+                    <Button x:Name="añadirImagenButton" Click="añadirImagenButton_Click">Añadir Imagen</Button>
+                    <Button Click="eliminarImagen_Button_Click">Eliminar Imagen</Button>
+                    <Button Click="eliminarTodas_Button_Click">Eliminar Todas</Button>
                 </WrapPanel>
                 <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-                    <Button Width="100" Margin="5" Click="rotar_Button_Click">Rotar</Button>
-                    <Button Width="100" Margin="5">Recortar</Button>
+                    <Button Click="rotar_Button_Click">Rotar</Button>
+                    <Button>Recortar</Button>
                 </WrapPanel>
             </DockPanel>
         </Border>
         <DockPanel>
             <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="40" FontFamily="Rubik">Visor de imágenes</TextBlock>
             <WrapPanel x:Name="panelImagenesWrapPanel">
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
-                <Image Source="./assets/episodioIV.jpg" Height="120" Margin="5"></Image>
+                <Image Source="./assets/episodioIV.jpg"></Image>
+                <Image Source="./assets/episodioIV.jpg"></Image>
+                <Image Source="./assets/episodioIV.jpg"></Image>
+                <Image Source="./assets/episodioIV.jpg"></Image>
             </WrapPanel>
         </DockPanel>
     </DockPanel>
